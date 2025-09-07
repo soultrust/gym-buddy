@@ -1,10 +1,10 @@
-from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from rest_framework import routers
-from django.conf.urls import include
+from .views import ExerciseViewSet 
 
-router = routers.DefaultRouter()
-
+router = routers.DefaultRouter() 
+router.register('exercises', ExerciseViewSet) 
+ 
 urlpatterns = [
-  path('', include(router.urls)),
+  path('', include(router.urls))
 ]
